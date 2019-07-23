@@ -1,0 +1,27 @@
+global:
+  enabled: true
+  image: "consul:1.4.2"
+  domain: consul
+  datacenter: dc1
+
+server:
+  enabled: true
+  replicas: 3
+  bootstrapExpect: 3
+  storage: 10Gi
+
+client:
+  enabled: true
+  grpc: true
+
+connectInject:
+  enabled: true
+
+dns:
+  enabled: true
+
+ui:
+  enabled: true
+  service:
+    enabled: true
+    type: LoadBalancer
